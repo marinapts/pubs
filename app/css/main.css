@@ -1,0 +1,19 @@
+nav {
+	background-color: #039be5;
+}
+
+.card-panel {
+    border-radius: 10px;
+}
+
+.input-field input[type=search] {
+    line-height: inherit;
+    padding-left: 1rem;
+}
+
+.input-field input[type=search]:focus {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    color: #444;
+}
