@@ -1,7 +1,8 @@
 import React from 'react';
 import DataAPI from 'DataAPI';
+import DrinksCategory from 'DrinksCategory';
 
-class Drinks extends React.Component {
+class DrinksPanel extends React.Component {
 	
 	constructor() {
 		super();
@@ -86,33 +87,12 @@ class Drinks extends React.Component {
 						<ul className="collapsible popout" data-collapsible="accordion">
 							{
 								Object.keys(drinks).map((key) => {
-									// console.log(key, drinks[key]);
-									var icon = key === 'beers' ? 'local_drink' : 'local_bar'; 
+									console.log(key, drinks[key]);
+									// var icon = key === 'beers' ? 'local_drink' : 'local_bar'; 
 									var defaultQuantity = 1;
 
 									return(
-										<li key={key}>
-											<div className="collapsible-header"><i className="material-icons">{icon}</i>{key}</div>
-											<div className="collapsible-body">
-												<ul className="collection">
-													{
-														drinks[key].map((drink, key) => {
-															return(
-																<li className="collection-item avatar" key={key}>
-																	<img src="img/beer.png" alt="" className="circle" />
-																	<span className="title">{drink.name}</span>
-																	
-																	<div className="secondary-content">
-																		£ {drink.price}
-																		<a onClick={() => {this.openModal(drink)}} ><i className="material-icons">add_circle_outline</i></a>
-																	</div>
-																</li>
-															)
-														})
-													}
-											    </ul>
-											</div>
-										</li>
+										<DrinksCategory key={key} category={key} drinks={drinks}/>
 									)
 								})
 							}
@@ -158,4 +138,4 @@ class Drinks extends React.Component {
     }
 };
 
-export default Drinks;
+export default DrinksPanel;

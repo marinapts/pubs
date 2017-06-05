@@ -5,7 +5,7 @@ import {BrowserRouter, Route, hashHistory, browserHistory} from 'react-router-do
 // Load components
 import Navbar from 'Navbar';
 import PubsPanel from 'PubsPanel';
-import Drinks from 'Drinks';
+import DrinksPanel from 'DrinksPanel';
 
 
 window.jQuery = window.$ = require('jquery');
@@ -19,7 +19,7 @@ ReactDOM.render(
 		<div>
 			<Navbar />
 			<Route exact path="/" component={() => (<PubsPanel />)} />
-			<Route exact path="/:pub" component={Drinks} />
+			<Route exact path="/:pub" component={DrinksPanel} />
 		</div>
 	</BrowserRouter>,
   	document.getElementById('app')

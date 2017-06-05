@@ -30,7 +30,10 @@ module.exports = function (env) {
                 Navbar: path.resolve(__dirname,'.././app/components/Navbar.jsx'),
                 PubsPanel: path.resolve(__dirname,'.././app/components/PubsPanel.jsx'),
                 PubCard: path.resolve(__dirname,'.././app/components/PubCard.jsx'),
-                Drinks: path.resolve(__dirname,'.././app/components/Drinks.jsx'),
+                DrinksPanel: path.resolve(__dirname,'.././app/components/DrinksPanel.jsx'),
+                DrinksCategory: path.resolve(__dirname,'.././app/components/DrinksCategory.jsx'),
+                Drink: path.resolve(__dirname,'.././app/components/Drink.jsx'),
+
 
                 // JS
                 DataAPI: path.resolve(__dirname,'.././app/components/DataAPI.js'),                
