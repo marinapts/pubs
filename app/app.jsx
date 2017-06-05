@@ -9,7 +9,8 @@ import Drinks from 'Drinks';
 
 
 window.jQuery = window.$ = require('jquery');
-require('Materialize');
+// require('Materialize');
+require('../node_modules/materialize-css/dist/js/materialize.min.js');
 // require('JqueryValidate');
 
 

@@ -52,7 +52,7 @@ class PubsPanel extends React.Component {
         // console.log(searchPub, filteredPubs);
 
         return (
-            <div className="container grey lighten-3">
+            <div className="container">
                 <header>
                     <h2 className="center">Edinburgh Pubs</h2>
                 </header>
@@ -64,8 +64,14 @@ class PubsPanel extends React.Component {
                 </div>
 
                 <div className="row">
-                    <div className="col s5 offset-s1 m4">
-                        <PubCard pubs={filteredPubs}/>
+                    <div className="col s12">
+                        <div className="row">
+                            <div className="col s6">
+                                
+                                <PubCard pubs={filteredPubs}/>
+                            </div>
+                        </div>
+                                
                     </div>
                 </div>
             </div>

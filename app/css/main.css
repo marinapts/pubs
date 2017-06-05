@@ -4,6 +4,7 @@ nav {
 
 .card-panel {
     border-radius: 10px;
+    border: 1px solid lightblue;
 }
 
 .input-field input[type=search] {
@@ -16,4 +17,9 @@ nav {
     border: 0;
     box-shadow: none;
     color: #444;
+}
+
+.modal.modal-fixed-footer {
+    top: 25%;
+    height: 50%;
 }

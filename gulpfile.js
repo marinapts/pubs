@@ -22,7 +22,7 @@ gulp.task('server', function() {
 // Concatenate & Minify CSS
 gulp.task('minify-css', function () {
     return gulp.src([  
-        './app/css/materialize.css',
+        './app/css/materialize.min.css',
         './app/css/base.css',
         './app/css/colors.css',
         './app/css/spaces.css',
