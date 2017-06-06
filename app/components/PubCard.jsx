@@ -15,12 +15,14 @@ class PubCard extends React.Component {
         	{
 	        	pubs.map((pub, key) => {
 					return(
-						<Link to={`/${pub.url}`} key={pub.id}>
-							<div className="card-panel grey-text center">
-								<h5>{pub.name}</h5>
-							    <p>{pub.address}</p>
-							</div>
-						</Link>
+						<div className="col s4" key={pub.id}>
+							<Link to={`/${pub.url}`}>
+								<div className="card-panel grey-text center">
+									<h5>{pub.name}</h5>
+								    <p>{pub.address}</p>
+								</div>
+							</Link>
+						</div>
 					)
 	        	})
         	}

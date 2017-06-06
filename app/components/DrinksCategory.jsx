@@ -23,7 +23,7 @@ class DrinksCategory extends React.Component {
 	    					drinks[category].map((drink, key) => {
 
 	    						return(
-	    							<Drink key={key} drink={drink}/>
+	    							<Drink key={key} category={category} drink={drink}/>
 	    						)
 	    					})
 	    				}

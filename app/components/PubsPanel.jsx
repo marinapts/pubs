@@ -66,10 +66,7 @@ class PubsPanel extends React.Component {
                 <div className="row">
                     <div className="col s12">
                         <div className="row">
-                            <div className="col s6">
-                                
-                                <PubCard pubs={filteredPubs}/>
-                            </div>
+                            <PubCard pubs={filteredPubs}/>
                         </div>
                                 
                     </div>

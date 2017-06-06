@@ -1,21 +1,16 @@
-# Boilerplate React App
+# Pubs App built with React
 
 - Webpack for bundling files and compiling
 - Materialize framework for styling
-- Gulp for css files bundling and webpack initialization 
-- Karma for testing
+- Gulp: start server, bundle css files into one minified, initialize and watch webpack
 
 
 To compile files run: 
 ```npm install OR yarn```
 
-To run tests: 
-```npm test```
 
-To initialize the server: 
-```node server.js```
+To run the application:
 
-To bundle any changes in css files: 
 ```gulp```
 
 In browser type: 

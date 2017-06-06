@@ -33,6 +33,8 @@ module.exports = function (env) {
                 DrinksPanel: path.resolve(__dirname,'.././app/components/DrinksPanel.jsx'),
                 DrinksCategory: path.resolve(__dirname,'.././app/components/DrinksCategory.jsx'),
                 Drink: path.resolve(__dirname,'.././app/components/Drink.jsx'),
+                DisplayOrder: path.resolve(__dirname,'.././app/components/DisplayOrder.jsx'),
+
 
 
                 // JS
