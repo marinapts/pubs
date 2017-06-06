@@ -16,8 +16,6 @@ class DrinksPanel extends React.Component {
 		this.placeOrder = this.placeOrder.bind(this);
 		this.getSelectedDrinks = this.getSelectedDrinks.bind(this);
 		this.calculateTotalCost = this.calculateTotalCost.bind(this);
-
-
 	}
 
 	componentWillMount() {
@@ -61,7 +59,7 @@ class DrinksPanel extends React.Component {
 
 		// var {totalCost} = this.state;
 		var {name, id, price} = drink;
-		console.log('finalPrice', name, finalPrice);
+		console.log('drinkspanel', name, finalPrice);
 		this.calculateTotalCost(finalPrice);
 		
 	}

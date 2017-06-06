@@ -11,7 +11,8 @@ class Drink extends React.Component {
 			drink: this.props.drink,
 			category: this.props.category,
 			totalCost: 0,
-			totalDrinks: []
+			totalDrinks: [],
+			finalPrice: 0
 
 		};
 		this.addDrink = this.addDrink.bind(this);
@@ -19,16 +20,70 @@ class Drink extends React.Component {
 		this.getPrice = this.getPrice.bind(this);
 
 	}
+
+	componentDidUpdate() {
+		// console.log(this.props);
+	}
 	
 	addDrink() {
-		var {quantity, drink} = this.state;
+		var {quantity, drink, totalDrinks} = this.state;
 		var initialPrice = drink.price;
 		var finalPrice = parseFloat((initialPrice * (quantity+1)).toFixed(2));
+		var newDrink;
+			
+		if(totalDrinks.length === 0) {
+			newDrink = {
+				id: drink.id,
+				name: drink.name,
+				quantity: ++quantity,
+				finalPrice
+			};
 
-		this.setState({
-			quantity: ++quantity,
-			finalPrice
-		});
+			this.setState({
+				// quantity: ++quantity,
+				// finalPrice,
+				totalDrinks: [newDrink]
+			});
+		}
+		else {
+			for(var d in totalDrinks) {
+				console.log('dsf');
+				// If this drinks has already been ordered at least once, update it, else add a new one
+				if(totalDrinks[d].id === drink.id) {
+					totalDrinks[d].finalPrice = finalPrice;
+					totalDrinks[d].quantity = quantity;
+					totalDrinks[d].id = drink.id;
+					totalDrinks[d].quantity = quantity;
+					newDrink = totalDrinks[d];
+					// console.log(newDrink);
+				}
+				else {
+					newDrink = {
+						id: drink.id,
+						name: drink.name,
+						quantity: ++quantity,
+						finalPrice
+					};
+					
+					this.setState({
+						quantity: ++quantity,
+						finalPrice,
+						totalDrinks: [newDrink]
+					});
+
+				}
+			}
+
+			this.setState({
+				quantity: ++quantity,
+				finalPrice,
+				totalDrinks: [
+					...totalDrinks,
+					newDrink
+				]
+			});
+		}
+
 	}
 
 	removeDrink() {
@@ -57,8 +112,8 @@ class Drink extends React.Component {
 	
 
     render() {
-		var {drink, category, quantity, totalCost, totalDrinks, finalPrice} = this.state;
-		console.log('finalPrice', finalPrice);
+		var {drink, category, quantity, totalCost, totalDrinks, finalPrice, totalDrinks} = this.state;
+		console.log('finalPrice', totalDrinks);
 
 		if(this.props.placeOrder) {
 			var finalPrice;

@@ -25,12 +25,12 @@ module.exports = {
             'wines': [
                 {
                     name: 'Red wine',
-                    id: 1,
+                    id: 3,
                     price: 6.20
                 },
                 {
                     name: 'White wine',
-                    id: 2,
+                    id: 4,
                     price: 5.60
                 },
 
@@ -61,12 +61,12 @@ module.exports = {
             'wines': [
                 {
                     name: 'Red wine',
-                    id: 1,
+                    id: 3,
                     price: 6.20
                 },
                 {
                     name: 'White wine',
-                    id: 2,
+                    id: 4,
                     price: 5.60
                 },
 
@@ -97,12 +97,12 @@ module.exports = {
             'wines': [
                 {
                     name: 'Red wine',
-                    id: 1,
+                    id: 3,
                     price: 6.20
                 },
                 {
                     name: 'White wine',
-                    id: 2,
+                    id: 4,
                     price: 5.60
                 },
 
@@ -133,12 +133,12 @@ module.exports = {
             'wines': [
                 {
                     name: 'Red wine',
-                    id: 1,
+                    id: 3,
                     price: 6.20
                 },
                 {
                     name: 'White wine',
-                    id: 2,
+                    id: 4,
                     price: 5.60
                 },
 
@@ -169,12 +169,12 @@ module.exports = {
             'wines': [
                 {
                     name: 'Red wine',
-                    id: 1,
+                    id: 3,
                     price: 6.20
                 },
                 {
                     name: 'White wine',
-                    id: 2,
+                    id: 4,
                     price: 5.60
                 },
 
