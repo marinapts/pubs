@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import Drink from 'Drink';
+
 
 class Drink extends React.Component {
 	
@@ -10,7 +10,8 @@ class Drink extends React.Component {
 			quantity: 0,
 			drink: this.props.drink,
 			category: this.props.category,
-			totalCost: 0
+			totalCost: 0,
+			totalDrinks: []
 
 		};
 		this.addDrink = this.addDrink.bind(this);
@@ -22,10 +23,11 @@ class Drink extends React.Component {
 	addDrink() {
 		var {quantity, drink} = this.state;
 		var initialPrice = drink.price;
+		var finalPrice = parseFloat((initialPrice * (quantity+1)).toFixed(2));
 
 		this.setState({
 			quantity: ++quantity,
-
+			finalPrice
 		});
 	}
 
@@ -33,11 +35,12 @@ class Drink extends React.Component {
 		
 		var {quantity, drink} = this.state;
 		var initialPrice = drink.price;
-		
+		var finalPrice = parseFloat((initialPrice * (quantity-1)).toFixed(2));
+
 		if(quantity > 0) {
 			this.setState({
 				quantity: --quantity,
-
+				finalPrice
 			});
 		}
 	}
@@ -51,12 +54,37 @@ class Drink extends React.Component {
 			return quantity * drink.price;
 		}
 	}
-
+	
 
     render() {
-		var {drink, category, quantity} = this.state;
-		console.log(drink.name, quantity);
+		var {drink, category, quantity, totalCost, totalDrinks, finalPrice} = this.state;
+		console.log('finalPrice', finalPrice);
 
+		if(this.props.placeOrder) {
+			var finalPrice;
+
+			if(quantity > 0) {
+				finalPrice = parseFloat((quantity * drink.price).toFixed(2));
+				
+				this.props.getSelectedDrinks(drink, finalPrice);
+
+				// this.setState({
+				// 	totalDrinks: [
+				// 		...totalDrinks,
+				// 		{
+				// 			name: drink.name,
+				// 			finalPrice: totalCost 
+				// 		}
+				// 	]
+				// });
+			}
+			// this.props.getSelectedDrinks(drink, quantity);
+		}
+		
+		// if(Object.keys(totalDrinks).length > 0) {
+		// 	console.log(Object.keys(totalDrinks).length);
+		// }
+		
     	return(
 	    	<li className="collection-item avatar row">
 				<img src="img/beer.png" alt="" className="circle" />
@@ -71,12 +99,12 @@ class Drink extends React.Component {
 				<div className="secondary-content">
 					{ quantity === 0 && 
 						<div>
-						<div className="col s1 hide remove">
-							<a><i className="material-icons">remove</i></a>
-						</div>
-						<div className="col s2 offset-s1 hide">
-							<span className="quantity">{quantity}</span>
-						</div>
+							<div className="col s1 hide remove">
+								<a><i className="material-icons">remove</i></a>
+							</div>
+							<div className="col s2 offset-s1 hide">
+								<span className="quantity">{quantity}</span>
+							</div>
 						</div>
 					}
 					

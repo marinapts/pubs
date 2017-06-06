@@ -9,9 +9,14 @@ class DrinksPanel extends React.Component {
 		super();
 		this.state = {
 			drinks: [],
-			pubInfo: {}
+			pubInfo: {},
+			placeOrder: false,
+			totalCost: 0
 		};
 		this.placeOrder = this.placeOrder.bind(this);
+		this.getSelectedDrinks = this.getSelectedDrinks.bind(this);
+		this.calculateTotalCost = this.calculateTotalCost.bind(this);
+
 
 	}
 
@@ -29,7 +34,8 @@ class DrinksPanel extends React.Component {
 					pubInfo: {
 						name: pubs[pub].name,
 						id: pubs[pub].id
-					}
+					},
+					finalOrder: {}
 				});
 			}
 		}
@@ -44,11 +50,34 @@ class DrinksPanel extends React.Component {
 
 	
 	placeOrder() {
-		console.log('placeOrder');
+		// console.log('placeOrder button');
+		this.setState({
+			placeOrder: true
+		});
+	}
+
+	getSelectedDrinks(drink, finalPrice) {
+		$('.collapsible').collapsible('close');
+
+		// var {totalCost} = this.state;
+		var {name, id, price} = drink;
+		console.log('finalPrice', name, finalPrice);
+		this.calculateTotalCost(finalPrice);
+		
+	}
+
+	calculateTotalCost(finalPrice) {
+		var {totalCost} = this.state;
+		totalCost += finalPrice;
+
+		// this.setState({
+		// 	totalCost
+		// });	
+		console.log('total', totalCost += finalPrice);
 	}
 
     render() {
-    	var {drinks, pubInfo} = this.state;
+    	var {drinks, pubInfo, placeOrder} = this.state;
 		
         return (
         	<div className="container">
@@ -62,7 +91,7 @@ class DrinksPanel extends React.Component {
 							{
 								Object.keys(drinks).map((key) => {
 									return(
-										<DrinksCategory key={key} category={key} drinks={drinks}/>
+										<DrinksCategory key={key} category={key} drinks={drinks} getSelectedDrinks={this.getSelectedDrinks} placeOrder={placeOrder} />
 									)
 								})
 							}

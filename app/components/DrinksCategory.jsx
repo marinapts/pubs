@@ -9,8 +9,7 @@ class DrinksCategory extends React.Component {
 	}
 
     render() {
-		var {category, drinks} = this.props;
-		// console.log(category, drinks[category]);
+		var {category, drinks, getSelectedDrinks, placeOrder} = this.props;
 		var icon = category === 'beers' ? 'local_drink' : 'local_bar'; 
 
     	return(
@@ -23,7 +22,7 @@ class DrinksCategory extends React.Component {
 	    					drinks[category].map((drink, key) => {
 
 	    						return(
-	    							<Drink key={key} category={category} drink={drink}/>
+	    							<Drink key={key} category={category} drink={drink} getSelectedDrinks={getSelectedDrinks} placeOrder={placeOrder}/>
 	    						)
 	    					})
 	    				}
