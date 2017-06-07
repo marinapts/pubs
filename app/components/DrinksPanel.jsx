@@ -11,7 +11,7 @@ class DrinksPanel extends React.Component {
 			drinks: [],
 			pubInfo: {},
 			placeOrder: false,
-			totalCost: 0
+			showButton: false
 		};
 
 		this.placeOrder = this.placeOrder.bind(this);
@@ -42,16 +42,15 @@ class DrinksPanel extends React.Component {
 	componentDidMount() {
 		$(document).ready(function(){
 		    $('.collapsible').collapsible();
-	     	$('.modal').modal();
 	  	});
 	}
-
+	
+	// Handle add or remove drinks event. If value === 1 add a drink, if -1 remove it
 	handleChangeDrinkQuantity(drink, category, value) {
 		var {drinks} = this.state;
 		var selectedCategory = drinks[category];
-		// var initialPrice = drink.price;
-		console.log(selectedCategory);
-		// Update quantity and price of the selected drink
+
+		// Update the quantity and price of the selected drink
 		for(var item in selectedCategory) {
 			if(selectedCategory[item].id === drink.id) {
 				var initialPrice = drink.price;
@@ -59,9 +58,10 @@ class DrinksPanel extends React.Component {
 				selectedCategory[item].finalPrice = parseFloat((initialPrice * (drink.quantity)).toFixed(2));
 			}
 		}
-
+		
 		this.setState({
-			drinks
+			drinks,
+			showButton: true
 		});
 	}	
 
@@ -71,7 +71,13 @@ class DrinksPanel extends React.Component {
 
 		// Remove any previous orders
 		$('.totalDrinks').children('div').children('p').remove();
-		// $('.totalCost').children('div').children('p').remove();
+		
+		// Style the box surrounding the order
+		$('.totalDrinks').css({
+			border: '1px solid lightblue',
+			margin: '0 20px 0 20px'
+		});
+
 
 		Object.keys(drinks).forEach((key) => {
 
@@ -79,30 +85,33 @@ class DrinksPanel extends React.Component {
 				var thisDrink = drinks[key][drink];
 
 				if(thisDrink.quantity > 0) {
-					totalCost = parseFloat((totalCost + thisDrink.finalPrice));
+					totalCost = parseFloat((totalCost + thisDrink.finalPrice).toFixed(2));
 
 					$('.totalDrinks div:first-child').append(`<p>${thisDrink.name}</p>`);
 					$('.totalDrinks div:nth-child(2)').append(`<p>X ${thisDrink.quantity}</p>`);
 					$('.totalDrinks div:nth-child(3)').append(`<p>£ ${thisDrink.finalPrice}</p>`);
 				}
+				else {
+					$('.totalDrinks').css({border: '0px'});
+				}
 			}
 
 		});
-
+		
 		$('.totalCost').children('div').children('p').remove();
-		$('.totalCost div').append(`<p>Total: £ ${totalCost} </p>`);
+		$('.totalCost div').append(`<p style="font-weight: bold;">Total: £ ${totalCost} </p>`);
 	}
 
 
 
     render() {
-    	var {drinks, pubInfo, placeOrder} = this.state;
-		console.log('grandpa state:', drinks);
+    	var {drinks, pubInfo, placeOrder, showButton} = this.state;
+		// console.log(showButton);
 
         return (
         	<div className="container">
 	        	<header>
-	        	    <h2 className="center">{pubInfo.name}</h2>
+	        	    <h3 className="center">{pubInfo.name}</h3>
 	        	</header>
 
 	        	<div className="row">
@@ -116,7 +125,6 @@ class DrinksPanel extends React.Component {
 											category={key} 
 											drinks={drinks}
 											handleChangeDrinkQuantity={this.handleChangeDrinkQuantity}
-											// handleRemoveDrink={this.handleRemoveDrink}
 										/>
 									)
 								})
@@ -125,23 +133,25 @@ class DrinksPanel extends React.Component {
 	        		</div>
 	        	</div>
 
-	        	<div className="row">
-	        		<div className="col s4 offset-s4">
-	        			<button className="btn waves-light waves-blue" onClick={this.placeOrder}>
-	        				Place order
-	        			</button>
-	        		</div>
-	        	</div>
+				{ showButton &&
+		        	<div className="row padTopBottom20">
+		        		<div className="col s4 offset-s4 m4 offset-m5">
+		        			<button className="btn waves-light waves-blue" id="order" onClick={this.placeOrder}>
+		        				Place order
+		        			</button>
+		        		</div>
+		        	</div>
+	        	}
 
 	        	<div className="row totalDrinks">
-	        		<div className="col s4 offset-s1"></div>
-	        		<div className="col s2"></div>
-	        		<div className="col s3 offset-s1"></div>
+	        		<div className="col s4 offset-s1 m5 offset-m1"></div>
+	        		<div className="col s2 m2"></div>
+	        		<div className="col s3 offset-s1 m3 <offset-m1></offset-m1>"></div>
 
 	        	</div>
 
-	        	<div className="row totalCost">
-	        		<div className="col s6 offset-s3 m4 offset-m6"></div>
+	        	<div className="row totalCost padTop20">
+	        		<div className="col s6 offset-s3 m4 offset-m7"></div>
 	        	</div>
         	</div>
             

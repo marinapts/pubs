@@ -1,17 +1,23 @@
 # Pubs App built with React
 
-- Webpack for bundling files and compiling
-- Materialize framework for styling
-- Gulp: start server, bundle css files into one minified, initialize and watch webpack
+A React application that helps users select the pub they are in, see the available drinks and their price and create a list of any selected drinks.
+
+When the list is ready, they should be able to present it to the bartender. 
+
+## Tools used
+
+* **[Webpack](https://webpack.js.org/)** for bundling files and compiling. There are two different webpack files, one for development and one for production. 
+* **[Materialize](http://materializecss.com/)** framework for responsive styling
+* **[Gulp](http://gulpjs.com/)**: start express server, bundle css files into one minified, initialize and watch webpack
 
 
-To compile files run: 
-```npm install OR yarn```
 
+## Installation and Run:
 
-To run the application:
+```
+npm install
+gulp
+```
 
-```gulp```
+In browser navigate to: ```localhost:3000```
 
-In browser type: 
-```localhost:3000```

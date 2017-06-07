@@ -33,11 +33,19 @@ module.exports = function (env) {
             alias: {
 
                 // Libraries
-                JqueryValidate: path.resolve(__dirname,'.././app/js/jquery.validate.min.js'),
                 Materialize: path.resolve(__dirname,'.././app/js/materialize.min.js'),
 
                 // Components
                 Main: path.resolve(__dirname,'.././app/components/Main.jsx'),
+                Navbar: path.resolve(__dirname,'.././app/components/Navbar.jsx'),
+                PubsPanel: path.resolve(__dirname,'.././app/components/PubsPanel.jsx'),
+                PubCard: path.resolve(__dirname,'.././app/components/PubCard.jsx'),
+                DrinksPanel: path.resolve(__dirname,'.././app/components/DrinksPanel.jsx'),
+                DrinksCategory: path.resolve(__dirname,'.././app/components/DrinksCategory.jsx'),
+                Drink: path.resolve(__dirname,'.././app/components/Drink.jsx'),
+
+                // JS
+                DataAPI: path.resolve(__dirname,'.././app/components/DataAPI.js'),   
 
             },
             extensions: ['.js', '.jsx', '.json']

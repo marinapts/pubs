@@ -10,39 +10,93 @@ module.exports = {
         long: 0,
         image_url: '',
         drinks: {
-            'beers': [
+            'Beers': [
                 {
-                    name: 'Guinness',
+                    name: 'Belhaven Best',
                     id: 1,
-                    price: 3.50,
+                    price: 2.80,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/best.jpg'
                 },
                 {
-                    name: 'Weiss',
+                    name: 'Weihenstephaner',
                     id: 2,
-                    price: 2.90,
+                    price: 5.75,
                     quantity: 0,
-                    finalPrice: 0    
-                }
-            ],
-            'wines': [
+                    finalPrice: 0,
+                    img: './img/beer.png'  
+                },
                 {
-                    name: 'Red wine',
+                    name: 'Blue Moon',
                     id: 3,
+                    price: 3.40,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+                {
+                    name: 'Erdinger',
+                    id: 4,
+                    price: 3.90,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+            ],
+            'Wines': [
+                {
+                    name: 'Red',
+                    id: 5,
                     price: 6.20,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
                 {
-                    name: 'White wine',
-                    id: 4,
+                    name: 'White',
+                    id: 6,
                     price: 5.60,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
+                {
+                    name: 'Rosè',
+                    id: 7,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+            ],
+            'Cocktails': [
+                {
+                    name: 'Mojito',
+                    id: 8,
+                    price: 7.50,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'French Martini',
+                    id: 9,
+                    price: 7.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'Rhubarb Fizz',
+                    id: 10,
+                    price: 8.0,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+            ],
 
-            ]
         }
     },
     {
@@ -54,39 +108,93 @@ module.exports = {
         long: 0,
         image_url: '',
         drinks: {
-            'beers': [
+            'Beers': [
                 {
-                    name: 'Guinness',
+                    name: 'Belhaven Best',
                     id: 1,
-                    price: 3.50,
+                    price: 2.80,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/best.jpg'
                 },
                 {
-                    name: 'Weiss',
+                    name: 'Weihenstephaner',
                     id: 2,
-                    price: 2.90,
+                    price: 5.75,
                     quantity: 0,
-                    finalPrice: 0
-                }
-            ],
-            'wines': [
+                    finalPrice: 0,
+                    img: './img/beer.png'  
+                },
                 {
-                    name: 'Red wine',
+                    name: 'Blue Moon',
                     id: 3,
+                    price: 3.40,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+                {
+                    name: 'Erdinger',
+                    id: 4,
+                    price: 3.90,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+            ],
+            'Wines': [
+                {
+                    name: 'Red',
+                    id: 5,
                     price: 6.20,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
                 {
-                    name: 'White wine',
-                    id: 4,
+                    name: 'White',
+                    id: 6,
                     price: 5.60,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
+                {
+                    name: 'Rosè',
+                    id: 7,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+            ],
+            'Cocktails': [
+                {
+                    name: 'Mojito',
+                    id: 8,
+                    price: 7.50,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'French Martini',
+                    id: 9,
+                    price: 7.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'Rhubarb Fizz',
+                    id: 10,
+                    price: 8.0,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+            ],
 
-            ]
         }
     },
     {
@@ -98,39 +206,93 @@ module.exports = {
         long: 0,
         image_url: '',
         drinks: {
-            'beers': [
+            'Beers': [
                 {
-                    name: 'Guinness',
+                    name: 'Belhaven Best',
                     id: 1,
-                    price: 3.50,
+                    price: 2.80,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/best.jpg'
                 },
                 {
-                    name: 'Weiss',
+                    name: 'Weihenstephaner',
                     id: 2,
-                    price: 2.90,
+                    price: 5.75,
                     quantity: 0,
-                    finalPrice: 0
-                }
-            ],
-            'wines': [
+                    finalPrice: 0,
+                    img: './img/beer.png'  
+                },
                 {
-                    name: 'Red wine',
+                    name: 'Blue Moon',
                     id: 3,
+                    price: 3.40,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+                {
+                    name: 'Erdinger',
+                    id: 4,
+                    price: 3.90,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+            ],
+            'Wines': [
+                {
+                    name: 'Red',
+                    id: 5,
                     price: 6.20,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
                 {
-                    name: 'White wine',
-                    id: 4,
+                    name: 'White',
+                    id: 6,
                     price: 5.60,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
+                {
+                    name: 'Rosè',
+                    id: 7,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+            ],
+            'Cocktails': [
+                {
+                    name: 'Mojito',
+                    id: 8,
+                    price: 7.50,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'French Martini',
+                    id: 9,
+                    price: 7.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'Rhubarb Fizz',
+                    id: 10,
+                    price: 8.0,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+            ],
 
-            ]
         }
     },
     {
@@ -142,39 +304,93 @@ module.exports = {
         long: 0,
         image_url: '',
         drinks: {
-            'beers': [
+            'Beers': [
                 {
-                    name: 'Guinness',
+                    name: 'Belhaven Best',
                     id: 1,
-                    price: 3.50,
+                    price: 2.80,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/best.jpg'
                 },
                 {
-                    name: 'Weiss',
+                    name: 'Weihenstephaner',
                     id: 2,
-                    price: 2.90,
+                    price: 5.75,
                     quantity: 0,
-                    finalPrice: 0
-                }
-            ],
-            'wines': [
+                    finalPrice: 0,
+                    img: './img/beer.png'  
+                },
                 {
-                    name: 'Red wine',
+                    name: 'Blue Moon',
                     id: 3,
+                    price: 3.40,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+                {
+                    name: 'Erdinger',
+                    id: 4,
+                    price: 3.90,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+            ],
+            'Wines': [
+                {
+                    name: 'Red',
+                    id: 5,
                     price: 6.20,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
                 {
-                    name: 'White wine',
-                    id: 4,
+                    name: 'White',
+                    id: 6,
                     price: 5.60,
                     quantity: 0,
-                    finalPrice: 0
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
                 },
+                {
+                    name: 'Rosè',
+                    id: 7,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+            ],
+            'Cocktails': [
+                {
+                    name: 'Mojito',
+                    id: 8,
+                    price: 7.50,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'French Martini',
+                    id: 9,
+                    price: 7.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'Rhubarb Fizz',
+                    id: 10,
+                    price: 8.0,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+            ],
 
-            ]
         }
     },
     {
@@ -186,35 +402,191 @@ module.exports = {
         long: 0,
         image_url: '',
         drinks: {
-            'beers': [
+            'Beers': [
                 {
-                    name: 'Guinness',
+                    name: 'Belhaven Best',
                     id: 1,
-                    price: 3.50,
-                    quantity: 0
+                    price: 2.80,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/best.jpg'
                 },
                 {
-                    name: 'Weiss',
+                    name: 'Weihenstephaner',
                     id: 2,
-                    price: 2.90,
-                    quantity: 0    
-                }
-            ],
-            'wines': [
+                    price: 5.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'  
+                },
                 {
-                    name: 'Red wine',
+                    name: 'Blue Moon',
                     id: 3,
-                    price: 6.20,
-                    quantity: 0
+                    price: 3.40,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
                 },
                 {
-                    name: 'White wine',
+                    name: 'Erdinger',
                     id: 4,
-                    price: 5.60,
-                    quantity: 0
+                    price: 3.90,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
                 },
+            ],
+            'Wines': [
+                {
+                    name: 'Red',
+                    id: 5,
+                    price: 6.20,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+                {
+                    name: 'White',
+                    id: 6,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+                {
+                    name: 'Rosè',
+                    id: 7,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+            ],
+            'Cocktails': [
+                {
+                    name: 'Mojito',
+                    id: 8,
+                    price: 7.50,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'French Martini',
+                    id: 9,
+                    price: 7.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'Rhubarb Fizz',
+                    id: 10,
+                    price: 8.0,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+            ],
 
-            ]
+        }
+    },
+    {
+        id: 6,
+        name: 'The Last Drop',
+        url: 'the-last-drop',
+        address: '74 Grassmarket, Edinburgh',
+        lat: 0,
+        long: 0,
+        image_url: '',
+        drinks: {
+            'Beers': [
+                {
+                    name: 'Belhaven Best',
+                    id: 1,
+                    price: 2.80,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/best.jpg'
+                },
+                {
+                    name: 'Weihenstephaner',
+                    id: 2,
+                    price: 5.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'  
+                },
+                {
+                    name: 'Blue Moon',
+                    id: 3,
+                    price: 3.40,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+                {
+                    name: 'Erdinger',
+                    id: 4,
+                    price: 3.90,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/beer.png'
+                },
+            ],
+            'Wines': [
+                {
+                    name: 'Red',
+                    id: 5,
+                    price: 6.20,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+                {
+                    name: 'White',
+                    id: 6,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+                {
+                    name: 'Rosè',
+                    id: 7,
+                    price: 5.60,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/wine.jpg'
+                },
+            ],
+            'Cocktails': [
+                {
+                    name: 'Mojito',
+                    id: 8,
+                    price: 7.50,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'French Martini',
+                    id: 9,
+                    price: 7.75,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+                {
+                    name: 'Rhubarb Fizz',
+                    id: 10,
+                    price: 8.0,
+                    quantity: 0,
+                    finalPrice: 0,
+                    img: './img/cocktail.jpg'
+                },
+            ],
+
         }
     },
 

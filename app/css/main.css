@@ -2,14 +2,23 @@ nav {
 	background-color: #039be5;
 }
 
+nav .brand-logo {
+    padding: 0 0 0 30px;
+}
+
+header h3 {
+    color: #584e4e;
+}
+
 .card-panel {
+    font-size: 13px;
     border-radius: 10px;
     border: 1px solid lightblue;
 }
 
 .input-field input[type=search] {
     line-height: inherit;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
 }
 
 .input-field input[type=search]:focus {
@@ -19,7 +28,51 @@ nav {
     color: #444;
 }
 
+input[type=search]:focus:not([readonly])+label {
+    color: #5492a7;
+}
+
 .modal.modal-fixed-footer {
     top: 25%;
     height: 50%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.categoryImg {
+    width: 50px;
+    height: 50px;
+}
+    
+.title, .price, .modifyQuantity {
+    padding-top: 15px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.totalDrinks p {
+    font-size: 1.1rem;
+}
+
+.totalCost p {
+    font-size: 1.5rem;
+}
+
+.btn {
+  background-color: #2099E8;
+}
+
+.btn-large:hover, .btn:hover, .btn:focus {
+    background-color: #2b71bb;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-panel {
+        font-size: 12px;
+    }
 }

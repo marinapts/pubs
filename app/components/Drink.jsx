@@ -15,14 +15,7 @@ class Drink extends React.Component {
 		this.addDrink = this.addDrink.bind(this);
 		this.removeDrink = this.removeDrink.bind(this);
 		this.getPrice = this.getPrice.bind(this);
-		// this.changeDrinkQuantity = this.changeDrinkQuantity.bind(this);
 	}
-	
-	// changeDrinkQuantity(e) {
-	// 	e.preventDefault();
-	// 	var {drink, category} = this.state;
-	// 	this.props.handleChangeDrinkQuantity(drink, category, value);
-	// }
 
 	addDrink(e) {
 		e.preventDefault();
@@ -52,23 +45,26 @@ class Drink extends React.Component {
 
     render() {
 		var {drink, category} = this.props;
-		var {name, price, quantity} = drink;
+		var {name, price, quantity, img} = drink;
 		
     	return(
-	    	<li className="collection-item avatar row">
-				<img src="img/beer.png" alt="" className="circle" />
+	    	<li className=" avatar row">
+	    		<div className="col s2 m1">
+	    			<img src={img} alt="" className="circle" />	
+	    		</div>
 				
-				<div className="col s4">
-					<span className="title">{name}</span>
+				
+				<div className="col s3 m3">
+					<div className="title">{name}</div>
 				</div>
-				<div className="col s3">
-					£ <span className="price">{this.getPrice().toFixed(2)}</span>
+				<div className="col s2 m2">
+					<div className="price">£ <span >{this.getPrice().toFixed(2)}</span></div>
 				</div>
 
-				<div className="secondary-content">
+				<div className="modifyQuantity">
 					{ quantity === 0 && 
-						<div>
-							<div className="col s1 hide remove">
+						<div className="col s3 m2 offset-m2">
+							<div className="col s2 hide remove">
 								<a><i className="material-icons">remove</i></a>
 							</div>
 							<div className="col s2 offset-s1 hide">
@@ -78,20 +74,21 @@ class Drink extends React.Component {
 					}
 					
 					{ quantity > 0 && 
-						<div>
-							<div className="col s1 remove">
+						<div className="col s3 m2 offset-m2">
+							<div className="col s2 remove">
 								<a onClick={this.removeDrink}><i className="material-icons">remove</i></a>
 							</div>
-							<div className="col s2 offset-s1">
+							<div className="col s2 offset-s5">
 								<span className="quantity">{quantity}</span>
 							</div>
 						</div>
 					}
 
-					<div className="col s1">
+					<div className="col s2 m2 modifyQuantity">
 						<a onClick={this.addDrink}><i className="material-icons">add</i></a>
 					</div>
 				</div>
+				
 			</li>
     	)
     }

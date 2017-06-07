@@ -8,7 +8,7 @@ import PubsPanel from 'PubsPanel';
 import DrinksPanel from 'DrinksPanel'
 
 window.jQuery = window.$ = require('jquery');
-// require('../node_modules/materialize-css/dist/js/materialize.min.js');
+window.$.velocity = require('velocity-animate/velocity.js')
 import 'Materialize';
 
 

@@ -3,16 +3,8 @@ import {Link} from 'react-router-dom';
 
 class PubCard extends React.Component {
 	
-	constructor() {
-		super();
-	}
-
-	componentDidMount() {
-		
-	}
-
     render() {
-    	let {pubs} = this.props;
+    	var {pubs} = this.props;
 
         return (
         	<div>

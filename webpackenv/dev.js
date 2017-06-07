@@ -22,7 +22,6 @@ module.exports = function (env) {
             alias: {
 
                 // Libraries
-                // JqueryValidate: path.resolve(__dirname,'.././app/js/jquery.validate.min.js'),
                 Materialize: path.resolve(__dirname,'.././app/js/materialize.min.js'),
 
                 // Components
