@@ -7,6 +7,10 @@ class PubCard extends React.Component {
 		super();
 	}
 
+	componentDidMount() {
+		
+	}
+
     render() {
     	let {pubs} = this.props;
 
@@ -15,7 +19,7 @@ class PubCard extends React.Component {
         	{
 	        	pubs.map((pub, key) => {
 					return(
-						<div className="col s4" key={pub.id}>
+						<div className="col s6 m4 singlePub" key={pub.id}>
 							<Link to={`/${pub.url}`}>
 								<div className="card-panel grey-text center">
 									<h5>{pub.name}</h5>

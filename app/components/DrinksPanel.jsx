@@ -13,9 +13,9 @@ class DrinksPanel extends React.Component {
 			placeOrder: false,
 			totalCost: 0
 		};
+
 		this.placeOrder = this.placeOrder.bind(this);
-		this.getSelectedDrinks = this.getSelectedDrinks.bind(this);
-		this.calculateTotalCost = this.calculateTotalCost.bind(this);
+		this.handleChangeDrinkQuantity = this.handleChangeDrinkQuantity.bind(this);
 	}
 
 	componentWillMount() {
@@ -46,37 +46,59 @@ class DrinksPanel extends React.Component {
 	  	});
 	}
 
-	
-	placeOrder() {
-		// console.log('placeOrder button');
+	handleChangeDrinkQuantity(drink, category, value) {
+		var {drinks} = this.state;
+		var selectedCategory = drinks[category];
+		// var initialPrice = drink.price;
+		console.log(selectedCategory);
+		// Update quantity and price of the selected drink
+		for(var item in selectedCategory) {
+			if(selectedCategory[item].id === drink.id) {
+				var initialPrice = drink.price;
+				selectedCategory[item].quantity += value;
+				selectedCategory[item].finalPrice = parseFloat((initialPrice * (drink.quantity)).toFixed(2));
+			}
+		}
+
 		this.setState({
-			placeOrder: true
+			drinks
 		});
+	}	
+
+	placeOrder() {
+		var {drinks} = this.state;
+		var totalCost = 0;
+
+		// Remove any previous orders
+		$('.totalDrinks').children('div').children('p').remove();
+		// $('.totalCost').children('div').children('p').remove();
+
+		Object.keys(drinks).forEach((key) => {
+
+			for(var drink in drinks[key]) {
+				var thisDrink = drinks[key][drink];
+
+				if(thisDrink.quantity > 0) {
+					totalCost = parseFloat((totalCost + thisDrink.finalPrice));
+
+					$('.totalDrinks div:first-child').append(`<p>${thisDrink.name}</p>`);
+					$('.totalDrinks div:nth-child(2)').append(`<p>X ${thisDrink.quantity}</p>`);
+					$('.totalDrinks div:nth-child(3)').append(`<p>£ ${thisDrink.finalPrice}</p>`);
+				}
+			}
+
+		});
+
+		$('.totalCost').children('div').children('p').remove();
+		$('.totalCost div').append(`<p>Total: £ ${totalCost} </p>`);
 	}
 
-	getSelectedDrinks(drink, finalPrice) {
-		$('.collapsible').collapsible('close');
 
-		// var {totalCost} = this.state;
-		var {name, id, price} = drink;
-		console.log('drinkspanel', name, finalPrice);
-		this.calculateTotalCost(finalPrice);
-		
-	}
-
-	calculateTotalCost(finalPrice) {
-		var {totalCost} = this.state;
-		totalCost += finalPrice;
-
-		// this.setState({
-		// 	totalCost
-		// });	
-		console.log('total', totalCost += finalPrice);
-	}
 
     render() {
     	var {drinks, pubInfo, placeOrder} = this.state;
-		
+		console.log('grandpa state:', drinks);
+
         return (
         	<div className="container">
 	        	<header>
@@ -89,7 +111,13 @@ class DrinksPanel extends React.Component {
 							{
 								Object.keys(drinks).map((key) => {
 									return(
-										<DrinksCategory key={key} category={key} drinks={drinks} getSelectedDrinks={this.getSelectedDrinks} placeOrder={placeOrder} />
+										<DrinksCategory 
+											key={key} 
+											category={key} 
+											drinks={drinks}
+											handleChangeDrinkQuantity={this.handleChangeDrinkQuantity}
+											// handleRemoveDrink={this.handleRemoveDrink}
+										/>
 									)
 								})
 							}
@@ -99,12 +127,21 @@ class DrinksPanel extends React.Component {
 
 	        	<div className="row">
 	        		<div className="col s4 offset-s4">
-		        		<Link to="/place-order">
-		        			<button className="btn waves-light waves-blue" onClick={this.placeOrder}>
-		        				Place order
-		        			</button>
-	        			</Link>
+	        			<button className="btn waves-light waves-blue" onClick={this.placeOrder}>
+	        				Place order
+	        			</button>
 	        		</div>
+	        	</div>
+
+	        	<div className="row totalDrinks">
+	        		<div className="col s4 offset-s1"></div>
+	        		<div className="col s2"></div>
+	        		<div className="col s3 offset-s1"></div>
+
+	        	</div>
+
+	        	<div className="row totalCost">
+	        		<div className="col s6 offset-s3 m4 offset-m6"></div>
 	        	</div>
         	</div>
             
