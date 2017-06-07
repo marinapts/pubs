@@ -7,6 +7,7 @@ When the list is ready, they should be able to present it to the bartender.
 ## Tools used
 
 * **[Webpack](https://webpack.js.org/)** for bundling files and compiling. There are two different webpack files, one for development and one for production. 
+The dev file makes development faster without decreasing the size of the bundled files, while the prod file minifies and uglifies the files, so that their size becomes smaller.
 * **[Materialize](http://materializecss.com/)** framework for responsive styling
 * **[Gulp](http://gulpjs.com/)**: start express server, bundle css files into one minified, initialize and watch webpack
 

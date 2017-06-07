@@ -41,7 +41,7 @@ gulp.task('minify-css', function () {
 gulp.task('webpack-watch', (cb) => {
     
     // When you want to upload to a server for production, change the env to prod
-    const webpack_watch = child.spawn('webpack', ['--watch', '--color', '--env=prod']);
+    const webpack_watch = child.spawn('webpack', ['--watch', '--color', '--env=dev']);
 
     webpack_watch.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
